@@ -25,7 +25,7 @@ int main() {
   if(current_position!=disk_size-1) {
         TotalHeadMovement+=abs((disk_size-1)-current_position);
         current_position=0;
-        TotalHeadMovement+=(disk_size-1)    }
+        TotalHeadMovement+=(disk_size-1);    }
     for(i=0;i<n;i++) {
         if(RQ[i]<initial) {
             TotalHeadMovement+=abs(RQ[i]-current_position);
