@@ -44,3 +44,6 @@ int main() {
  initial = 0; }
  for (int i = index; i < n; i++) {
  totalheadmovement += abs(rq[i] - initial);
+initial = rq[i]; } }
+ printf("\nTotal head movement: %d\n", totalheadmovement);
+ return 0;}
