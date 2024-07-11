@@ -49,3 +49,22 @@ int main() {
     closedir(dir);
     return 0;
 }	
+
+
+#include <stdio.h>
+#include <sys/stat.h>
+#include <unistd.h>
+int main() {
+    char filename[] = "example.txt";
+    struct stat fileStat;
+    if (stat(filename, &fileStat) == -1) {
+        perror("stat");
+        return 1;
+    }
+    printf("File: %s\n", filename);
+    printf("Size: %ld bytes\n", fileStat.st_size);
+    printf("Owner ID: %d\n", fileStat.st_uid);
+    printf("Group ID: %d\n", fileStat.st_gid);
+    printf("Permissions: %o\n", fileStat.st_mode & 0777);
+    return 0;
+}
